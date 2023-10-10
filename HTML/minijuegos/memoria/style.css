@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
+}
+.containerMain{
+    height: 90vh;
+    width: 100vw;
+}
+.containerC{
+    perspective: 900px;
+    padding: 2.5vmin ;
+    height: 45vmin;
+}
+.cart{
+    justify-self: center;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vmin;
+    width: 20vmin;
+    position: relative;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+    align-self: center;
+    justify-self: center;
+}
+.front,.back{
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5vmin;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3rem;
+    color: rgb(211,211,211);
+}
+.front{
+    background-color: rgb(227, 227, 227);
+    background-image: url(imgs/question-square-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.back{
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+.modal-fondo
+{
+    z-index: 20;
+    position: absolute;
+    top: 0%;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0909098a;
+    display: grid;
+    place-content: center;
+}
+
+.modal-cuerpo
+{
+    height: 60vmin;
+    width: 80vmin;
+    background-color: #f0f0f0;
+    border-radius: 5vmin;
+    text-align: center;
+    padding-top: 2.5vmin;
+}
+
+
+.boton
+{
+    display: flex;
+    background-color: #E9A032;
+    height: 20vmin;
+    width: 30vmin;
+    margin: 0vmin 5vmin;
+    border-radius: 5vmin;
+    align-items: center;
+    justify-content: center;
+    transition: ease-out 0.5s;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    color: #090909;
+}
+
+.boton:hover
+{
+    box-shadow: 0px 0px 1vmin #a36f20;
+}
+
+
+
+

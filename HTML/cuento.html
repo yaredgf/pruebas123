@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/master.css">
+    <link rel="stylesheet" href="../CSS/cuento.css">
+    <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="container-fluid fondo-cuento">
+        <!--Header-->
+        <div class="row header">
+            <div class="col-8 offset-2">
+                <a href="https://www.museocostarica.go.cr/" class="nav-link d-inline-block">
+                    <img src="../IMG/Recursos/logo-cafe-1.svg"  style="height:8vmin; margin-top: 1vmin;" draggable="false">
+                </a>
+                <a href="../index.html" class="nav-link d-inline-block float-end">
+                    <img src="../IMG/Recursos/Logo.svg"  style="height:8vmin; margin-top: 1vmin;" draggable="false" >
+                </a>
+            </div>
+        </div>
+
+
+        <div class="" style="height: 100%;width: 100%;">
+
+            <div class="row mb-3 mt-3">
+
+                <div id="contenedorPag" style="height:85vmin;" class="col-12 col-md-7 d-flex justify-content-center align-self-center p-0 ">
+                    <div class="row d-inline-block  m-0 p-0" style="height: 100%;width: auto;">
+                        <div class="d-inline-block p-0 m-0"style="background-color: #F0f0f0;height: 100%;width: auto;">
+                            <!--Imagen normal-->
+                            <img src="../IMG/Paginas/Pag1.png" alt="" class="img-fluid imagen-cuento" style="width:auto;height: 100%">
+                
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 p-4"style="height:85vmin; ">
+                    <div class="row rounded-3 p-4" style="background-color:#00000071; height: 100%; align-self: center;">
+                        <div class="col-12 audio-container ">
+                            <div class="row align-content-center text-center" style="height: 100%;">
+                                <div class="col-2 opc-contador align-content-center" onclick="CambiarContador(-1)">
+                                    <label><b>&lt</b></label>
+                                </div>
+                                <div class="col-8" style="height: 90%;">
+                                    <input value="1" id="contadorPagina" type="number"
+                                    class="contadorPagina input-contador" placeholder="0" min="0" max="40">
+                                </div>
+                                <div class="col-2 opc-contador" onclick="CambiarContador(1)">
+                                    <label><b>&gt</b></label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <!--Opciones de abajo-->
+                        <div class="col-12 align-self-end">
+                            
+                            <!--Audio-->
+                            <div class="row mb-4">
+                                <audio id="audio" src="../Recursos/Audios/ph3.mp3" onchange="console.log('asa')"></audio>
+                                <div id="audio-container" class="audio-container d-flex align-content-center">
+                                    <input id="barraTiempo" type="range" class="audio-range" name="" 
+                                    min="0" max="1" oninput="CambiarAudio()">
+                                </div>
+                            </div>
+                            
+                            <!--Botones-->
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="d-flex justify-content-center">
+                                        <img id="playBtn" onclick="PlayAudio()" src="../IMG/Recursos/IconPlay.svg" class="icon" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../IMG/Recursos/IconSpeaker.svg" class="icon" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../IMG/Recursos/IconTraducir.svg" class="icon" draggable="false">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <div class="row text-center color-arena footer">
+            <div class="col-12">
+                <img src="../IMG/Recursos/logo-cafe-1.svg" style="height: 15vmin; margin-top: 5vmin;margin-bottom: 10vmin;" class="img-fluid ">
+            </div>
+            <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3" style="margin-bottom: 10vmin;">
+                <div class="row ">
+                    <div class="col-4 p-4 d-flex align-content-center">
+                        <img src="../IMG/Recursos/LogoCR22-26.svg" class="img-fluid ">
+                    </div>
+                    <div class="col-4 p-4 d-flex align-content-center">
+                        <img src="../IMG/Recursos/LogoCulturaCrecer.svg" class="img-fluid ">
+                    </div>
+                    <div class="col-4 p-4 d-flex align-content-center">
+                        <img src="../IMG/Recursos/LogoCyJ.svg" class="img-fluid ">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-12">
+                <p>Museo Nacional de Costa Rica</p>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/master.css">
+    <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
+</head>
+<body>
+    <style>
+        .foto
+        {
+            width: 45vmin;
+            height: 45vmin;
+            z-index: 2;
+        }
+        .cont-foto
+        {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transition: ease-in-out 0.4s;
+            z-index: 1;
+            width: 45vmin;
+            height: 45vmin;
+            margin-top: 5vw;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transition-delay: 0.3s
+        }
+        .cont-foto:hover
+        {
+            width: 70vmin;
+            transition-delay: 0s;
+        }
+        .hover-foto
+        {
+            transition: ease-in-out 0.3s;
+            overflow-y: hidden;
+            z-index: 20;
+            width: 100%;
+            height: 45vmin;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: transparent;
+            justify-items: baseline;
+            align-items: center;
+            padding: 0 !important;
+            
+        }
+        .hover-foto:hover
+        {
+            background-color: #090909c0;
+            overflow-y: scroll;
+        }
+        .hover-foto::-webkit-scrollbar {width: 1.5vmin;}
+        .hover-foto::-webkit-scrollbar-track {background: transparent;}
+        .hover-foto::-webkit-scrollbar-thumb {background: #f0f0f011;border-radius: 2vmin;}
+        .div-texto{
+            height: 100%;
+            width: 100%;
+            transition: ease-out 0.3s;
+            transition-delay: 0s;
+            font-size: 2.5vmin;
+            color: transparent;
+            padding: 2.5vmin 2vmin;
+        }
+        .div-texto:hover{transition-delay: 0.4s;color: #f0f0f0;}
+    </style>
+
+    <div class="container-fluid">
+        <!--Header-->
+        <div class="row header">
+            <div class="col-8 offset-2">
+                <a href="https://www.museocostarica.go.cr/" class="nav-link d-inline-block">
+                    <img src="../IMG/Recursos/logo-cafe-1.svg"  style="height:8vmin; margin-top: 1vmin;" draggable="false">
+                </a>
+                <a href="../index.html" class="nav-link d-inline-block float-end">
+                    <img src="../IMG/Recursos/Logo.svg"  style="height:8vmin; margin-top: 1vmin;" draggable="false" >
+                </a>
+            </div>
+        </div>
+
+
+        <!--Contenedor fotos-->
+        <div class="row" style="margin-bottom: 5vmin;">
+
+            <!--Foto1-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Balsa.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Vasija en forma de canoa</h2>
+                            <hr>
+                            <p>Número de pieza: 21681</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Una vasija en forma de canoa, con dos figuras humanas en los extremos.
+                             Data del período Chiriquí. (800-1500 d.c)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Foto2-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caballito.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Caballito de Mar)                            </h2>
+                            <hr>
+                            <p>Número de pieza: 21453</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Posee una base de espiga, además de unas aletas que rodean su prominente abdomen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto3-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Cocodrilo.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Lagarto de perfil)</h2>
+                            <hr>
+                            <p>Número de pieza: 21452</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Sonriente escultura representativa de los lagartos de la zona.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto4-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Tortuga.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Figura zoomorfa (Tortuga sin caparazón)</h2>
+                            <hr>
+                            <p>Número de pieza: (Guardada bajo un sistema diferente)</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Un sonajero que presenta una escudilla semihemiférica en el lomo. Data del período Chiriquí. (800-1500 d.c)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto5-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Ocarina.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Ocarina zoomorfa (Pez)</h2>
+                            <hr>
+                            <p>Número de pieza: 20570</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Instrumento de viento hecho con pintura roja y negra, sobre engobe crema.
+                                 Data del período Chiriquí. (800-1500 d.c)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto6-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Silbato.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Silbato zoomorfo (Posible Tiburón Ballena)                            </h2>
+                            <hr>
+                            <p>Número de pieza: 32083</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Tiene en la base dos anillos que rodean la circunferencia de cada una remantando en las puntas con pintura roja.
+                                 Se utilizaron engobe crema, pintura roja y café oscuro.
+                                 Faltante de pintura y engobe en algunas partes. Data del período Chiriquí. (800-1500 d.c)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto7-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caracola.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Extracción del tinte del Muricidae<br>Ilustrado por Rodicab</h2>
+                            <hr>
+                            <p>Esta ilustración muestra el proceso de la extracción del tinte de los caracoles Muricidae.
+                                 El color púrpura, producido por una glándula, era apreciado entre los indígenas 
+                                 pues cumplía la función de teñir hilos y telas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto8-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/ColganteTiburcio.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Colgante zoomorfo (Tiburón)</h2>
+                            <hr>
+                            <p>Número de pieza: 22867</p>
+                            <p>Colgante hecho de oro con forma de tiburón, al cuál se le han añadido 4 placas en sus aletas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Foto9-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/ColganteMandibulin.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Colgante zoomorfo (Presumiblemente un tiburón)</h2>
+                            <hr>
+                            <p>Número de pieza: 14501</p>
+                            <p>Figura de un animal marino con 2 aletas dorsales,  2 aletas pectorales,
+                                 2 aletas ventrales y 1 aleta caudal (su cola) formada por 2 lóbulos.
+                                 Tiene los ojos resaltados y la boca abierta, bajo la mandíbula se encuentra su argolla de suspensión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Foto10-->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caballito.webp');">
+                    <div class="hover-foto text-center font-esp">
+                        <div class="div-texto">
+                            <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Caballito de Mar)                            </h2>
+                            <hr>
+                            <p>Número de pieza: 21453</p>
+                            <p>Encontrada en la Región Arqueológica: Pacífico Sur - Subregión Diquís</p>
+                            <p>Posee una base de espiga, además de unas aletas que rodean su prominente abdomen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+    </div>
+</body>
+</html>

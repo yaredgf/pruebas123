@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    gap: 0;
+    padding: 0;
+    user-select: none;
+}
+#sopaLetras{
+    border-collapse: collapse;
+}
+.selected{
+    background-color: rgba(238, 0, 255, 0.576)!important;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid;
+    margin: 0;
+    
+}
+.sopaContainer{
+    width: fit-content;
+}
+.tRow{
+    background-color: rgb(255, 255, 255);
+}
+.tElement{
+    width: 20px;
+    height: 10px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid;
+    margin: 0;
+}
+#palabras{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#palabras>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: aqua;
+    height: 150px;
+}
