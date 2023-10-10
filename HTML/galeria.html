@@ -7,71 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/master.css">
+    <link rel="stylesheet" href="../CSS/galeria.css">
     <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
 </head>
 <body>
-    <style>
-        .foto
-        {
-            width: 45vmin;
-            height: 45vmin;
-            z-index: 2;
-        }
-        .cont-foto
-        {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            transition: ease-in-out 0.4s;
-            z-index: 1;
-            width: 45vmin;
-            height: 45vmin;
-            margin-top: 5vw;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            transition-delay: 0.3s
-        }
-        .cont-foto:hover
-        {
-            width: 70vmin;
-            transition-delay: 0s;
-        }
-        .hover-foto
-        {
-            transition: ease-in-out 0.3s;
-            overflow-y: hidden;
-            z-index: 20;
-            width: 100%;
-            height: 45vmin;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: transparent;
-            justify-items: baseline;
-            align-items: center;
-            padding: 0 !important;
-            
-        }
-        .hover-foto:hover
-        {
-            background-color: #090909c0;
-            overflow-y: scroll;
-        }
-        .hover-foto::-webkit-scrollbar {width: 1.5vmin;}
-        .hover-foto::-webkit-scrollbar-track {background: transparent;}
-        .hover-foto::-webkit-scrollbar-thumb {background: #f0f0f011;border-radius: 2vmin;}
-        .div-texto{
-            height: 100%;
-            width: 100%;
-            transition: ease-out 0.3s;
-            transition-delay: 0s;
-            font-size: 2.5vmin;
-            color: transparent;
-            padding: 2.5vmin 2vmin;
-        }
-        .div-texto:hover{transition-delay: 0.4s;color: #f0f0f0;}
-    </style>
+    
 
     <div class="container-fluid">
         <!--Header-->
@@ -92,7 +32,8 @@
 
             <!--Foto1-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Balsa.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Balsa.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Vasija en forma de canoa</h2>
@@ -108,7 +49,8 @@
             
             <!--Foto2-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caballito.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Caballito.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Caballito de Mar)                            </h2>
@@ -123,7 +65,8 @@
 
             <!--Foto3-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Cocodrilo.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Cocodrilo.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Lagarto de perfil)</h2>
@@ -138,7 +81,8 @@
 
             <!--Foto4-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Tortuga.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Tortuga.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Figura zoomorfa (Tortuga sin caparazón)</h2>
@@ -153,7 +97,8 @@
 
             <!--Foto5-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Ocarina.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Ocarina.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Ocarina zoomorfa (Pez)</h2>
@@ -169,7 +114,8 @@
 
             <!--Foto6-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Silbato.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Silbato.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Silbato zoomorfo (Posible Tiburón Ballena)                            </h2>
@@ -187,7 +133,8 @@
 
             <!--Foto7-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caracola.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Caracola.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Extracción del tinte del Muricidae<br>Ilustrado por Rodicab</h2>
@@ -203,7 +150,8 @@
 
             <!--Foto8-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/ColganteTiburcio.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/ColganteTiburcio.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Colgante zoomorfo (Tiburón)</h2>
@@ -217,7 +165,8 @@
             
             <!--Foto9-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/ColganteMandibulin.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/ColganteMandibulin.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Colgante zoomorfo (Presumiblemente un tiburón)</h2>
@@ -233,7 +182,8 @@
 
             <!--Foto10-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="cont-foto" style="background-image: url('../IMG/Galeria/Caballito.webp');">
+                <div class="cont-foto">
+                    <img src="../IMG/Galeria/Caballito.webp" class="foto">
                     <div class="hover-foto text-center font-esp">
                         <div class="div-texto">
                             <h2 style="font-size: 3.25vmin;">Escultura de bulto zoomorfa (Caballito de Mar)                            </h2>
