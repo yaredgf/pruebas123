@@ -70,8 +70,8 @@
     background-repeat: no-repeat;
     background-clip: content-box;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .contenedor-body
