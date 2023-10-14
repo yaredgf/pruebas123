@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="../../../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
     <title>Juego de memoria</title>
 </head>
-<body onload="handleLoad()">
-    <div class="container-fluid">
+<body onload="handleLoad()" >
+    <img src="imgs/FondoPresentacion.webp" class="fondo-container">
+    <div class="container-fluid ">
         <!--Header-->
         <div class="row header">
             <div class="col-8 offset-2">
@@ -23,8 +24,7 @@
                 </a>
             </div>
         </div>
-
-        <div class="containerMain" >
+        <div class="containerMain " >
             <div id="table" class="row align-content-center" style="width: 100vw; height: 100%;">
 
             </div>
@@ -35,7 +35,7 @@
     <div class="modal-fondo" id="ModalWin">
         <div class="modal-cuerpo ">
             <h1 class="font-esp" style="height: 5vmin;" >¡ Ganaste, bien hecho !</h1>
-            <p class="letra-sm" style="height: 5vmin;">Has durado <label id="tiempo">x</label> segundos</p>
+            <p class="letra-sm" style="height: 5vmin;">Tuviste un tiempo de <label id="tiempo">x</label></p>
 
             <div class="d-flex"style="height: 47.5vmin;">
                 

@@ -62,3 +62,11 @@
 .div-texto:hover{transition-delay: 0.4s;color: #f0f0f0;}
 .foto{transition: ease-in-out 0.3s;width: 100%;height: auto;margin-top: 0vmin;transition-delay: 0.3s;}
 .cont-foto:hover .foto{transition-delay: 0s;margin-top: -12.5vmin;}
+.fondo-container
+{
+    top: 0%;
+    position: sticky;
+    height: 100vh;
+    width: 100vmax;
+    margin-top: 100vh;
+}

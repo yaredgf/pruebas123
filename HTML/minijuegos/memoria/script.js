@@ -52,8 +52,17 @@ modal.style.opacity=0;
 modal.style.display="none";
 function Ganar()
 {
-    
-    document.getElementById('tiempo').innerText= tiempo;
+    let tiempoFinal="0", minutos="minuto";
+    if (Math.floor(tiempo/60)>0)
+    {
+        if (Math.floor(tiempo/60)>1) {minutos= "minutos";}
+        tiempoFinal= (Math.floor(tiempo/60))+" "+minutos+" con "+(tiempo%60)+" segundos";
+    }
+    else
+    {
+        tiempoFinal= (tiempo%60)+" segundos"
+    }
+    document.getElementById('tiempo').innerText= tiempoFinal;
     modal.style.display="grid";
     $('#ModalWin').animate({opacity:1},'slow')
 }
