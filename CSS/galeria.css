@@ -68,7 +68,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: content-box;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -83,14 +82,14 @@
 .contenedor-body::-webkit-scrollbar-track {background: transparent;}
 .contenedor-body::-webkit-scrollbar-thumb {background: #f0f0f0c9;border-radius: 2vmin;}
 
-.tostada
+#tostada
 {
     transition: ease-in-out 0.4s;
     font-size: 2vh;
     z-index: 20;
     position: absolute;
     top: 88vh;
-    right: 5vh;
+    right: -40vh;
     height: 10vh;
     width: 25vh;
     background-color: #E9A032;
@@ -100,4 +99,12 @@
     text-align: center;
     display: flex;
     align-items: center;
+}
+#cont-tostada
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    overflow: hidden;
 }

@@ -198,22 +198,32 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
-    <div id="tostada" class="tostada">
-        <p>¡ Pulsa las imágenes para más información ! </p>
+    <div id="cont-tostada">
+        <div id="tostada" >
+            <p>¡ Pulsa las imágenes para más información ! </p>
+        </div>
     </div>
+    
 
     <script>
         function Tostada()
         {
+            document.getElementById("tostada").style.right="5vh";
             setTimeout(function()
             {
                 document.getElementById("tostada").style.right="-40vh";
+                setTimeout(function()
+                    {
+                        document.getElementById("tostada").style.right="-40vh";
+                    },
+                    400
+                );
             },
-                2500
+                2900
             );
         }
 
