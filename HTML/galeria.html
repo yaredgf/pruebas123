@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="../CSS/galeria.css">
     <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
 </head>
-<body>
-    <div style="margin-top: -100vh;"><img src="../IMG/Recursos/FondoGaleria.png" class="fondo-container"></div>
+<body class="fondo-container" onload="Tostada()">
 
     <div class="container-fluid">
         <!--Header-->
@@ -28,7 +27,7 @@
 
 
         <!--Contenedor fotos-->
-        <div class="row">
+        <div class="row contenedor-body" >
             <div class="col-12 col-md-10 offset-md-1">
                 <div class="row" style="margin-bottom: 5vmin;">
 
@@ -199,15 +198,24 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 
-    <div class="tostada">
-        a
+    <div id="tostada" class="tostada">
+        <p>¡ Pulsa las imágenes para más información ! </p>
     </div>
 
     <script>
-
+        function Tostada()
+        {
+            setTimeout(function()
+            {
+                document.getElementById("tostada").style.right="-40vh";
+            },
+                2500
+            );
+        }
 
 
 

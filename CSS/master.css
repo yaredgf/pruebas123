@@ -52,7 +52,7 @@ input[type=number] {
 .header{
     z-index: 10;
     background-color: #E9A032;
-    height:10vmin;
+    height:10vh;
     top:0px;
     position:sticky;
     box-shadow: 0px 2px 10px #36363693;
