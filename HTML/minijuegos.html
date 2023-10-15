@@ -9,6 +9,38 @@
     <link rel="stylesheet" href="../CSS/master.css">
     <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
 </head>
+<style>
+    /*para sm*/
+    @media (max-width:768px)
+    { 
+        .cont-preview-sm
+        {
+            width: 40vmin;
+            height: 33.33vmin;
+        }
+    }
+
+    /*para md*/
+    @media (min-width:768px)
+    {
+        .cont-preview-md
+        {
+            width: 30vmin;
+            height: 25vmin;
+        }
+    }
+    .cont-preview
+    {
+        transition: ease-in-out 0.3s;
+        background-color: #E9A032;
+        border-radius: 2vmin;
+        outline: solid  1vmin #d4ebeb85;
+        box-shadow: 0px 0px 5px #46464681;
+        align-self: center;
+        justify-self: center;
+    }
+    .cont-preview:hover{box-shadow: 0px 0px 15px #464646;}
+</style>
 <body>
     <div class="container-fluid">
         <!--Header-->
@@ -20,6 +52,57 @@
                 <a href="../index.html" class="nav-link d-inline-block float-end">
                     <img src="../IMG/Recursos/Logo.svg"  style="height:8vmin; margin-top: 1vmin;" draggable="false" >
                 </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
+                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+            </div>
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
+                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+            </div>
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
+                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!--Footer-->
+    <div class="container-fluid">
+        <div class="row text-center color-arena footer font-secundario" style="padding-top: 5vmin;">
+                
+            <!--Logos-->
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/LogoCyJ.svg" alt="" style="width: auto; height: 10vmin; align-self: center; justify-self: center;">
+            </div>  
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/LogoMNCR.svg" alt="" style="width: auto; height: 10vmin; align-self: center; justify-self: center;">
+            </div>
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/LogoCulturaCrecer.svg" alt="" style="width: 100%; height: auto; align-self: center; justify-self: center;">
+            </div>
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/LogoCR22-26.svg" alt="" style="width: auto; height: 10vmin; align-self: center; justify-self: center;">
+            </div>
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/LogoExpotec.svg" alt="" style="width: auto; height: 10vmin; align-self: center; justify-self: center;">
+            </div>
+            <div class="col-2" style="display: grid;">
+                <img draggable="false" src="../IMG/Recursos/Logo_Diseno.svg" alt="" style="width: 100%; height: 10vmin; align-self: center; justify-self: center;">
+            </div>
+            <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3" style="margin-bottom: 1vmin;margin-top: 2vmin;">
+                <p>Museo Nacional de Costa Rica</p>
             </div>
         </div>
     </div>
