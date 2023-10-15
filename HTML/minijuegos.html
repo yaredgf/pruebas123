@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minijuegos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/master.css">
     <link rel="shortcut icon" href="../IMG/Recursos/museo-favicon-32x32.webp" type="image/x-icon">
 </head>
 <style>
+    body{overflow-x: hidden;}
     /*para sm*/
     @media (max-width:768px)
     { 
@@ -31,18 +32,70 @@
     }
     .cont-preview
     {
+        z-index: 3;
         transition: ease-in-out 0.3s;
+        border-radius: 2vmin;
+        align-self: center;
+        justify-self: center;
+        display: grid;
+        position: relative;
+        top: 0%;
+    }
+    .cont-preview:hover{box-shadow: 0px 0px 15px #464646;}
+    .preview-card
+    {
+        z-index: 5;
+        width: 100%;
+        height: 100%;
         background-color: #E9A032;
         border-radius: 2vmin;
         outline: solid  1vmin #d4ebeb85;
         box-shadow: 0px 0px 5px #46464681;
-        align-self: center;
-        justify-self: center;
     }
-    .cont-preview:hover{box-shadow: 0px 0px 15px #464646;}
+    .texto-preview
+    {
+        z-index: 6;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        font-family: Bree Serif;
+        font-size: 4vmin;
+        transition: inherit;
+        position: absolute;
+    }
+    .cartas
+    {
+        z-index: 1 !important;
+        transition: inherit;
+        height: 80%;
+        width: auto;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    .cont-preview:hover .carta1
+    {
+        top: -6vmin;
+        left: -2vmin;
+        transform: rotate(-10deg);
+    }
+    .cont-preview:hover .carta2
+    {
+        top: -7.5vmin;
+        left: -6vmin;
+        transform: rotate(-20deg);
+    }
+    .cont-preview:hover .carta3
+    {
+        top: -1vmin;
+        left: 80%;
+        transform: rotate(25deg);
+    }
+    
 </style>
 <body>
-    <div class="container-fluid">
+    <audio id="clickFeliz" src="../Recursos/Audios/clickFeliz.mp3"></audio>
+    <div class="container-fluid" style="height: 100%;">
         <!--Header-->
         <div class="row header">
             <div class="col-8 offset-2">
@@ -55,15 +108,31 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
-                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+        <div class="row" style="margin: 25vmin 0px 0vmin 0px;">
+
+            <!--Sopa de letras-->
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid" style="margin-bottom: 15vmin ;">
+                <div class="cont-preview cont-preview-sm cont-preview-md">
+                    <p class="texto-preview">Sopa de letras</p>
+                </div>
             </div>
-            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
-                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+            
+            <!--Memoria-->
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid" style="margin-bottom: 15vmin ;">
+                <div class="cont-preview cont-preview-sm cont-preview-md" onclick="Redireccionar('minijuegos/memoria/')">
+                    <img src="minijuegos/memoria/imgs/2.png" class="cartas carta1">
+                    <img src="minijuegos/memoria/imgs/4.png" class="cartas carta2">
+                    <img src="minijuegos/memoria/imgs/1.png" class="cartas carta3">
+                    <div class="preview-card"></div>
+                    <p class="texto-preview">Memoria</p>
+                </div>
             </div>
-            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid">
-                <div class="cont-preview cont-preview-sm cont-preview-md"></div>
+            
+            <!--Diferencias-->
+            <div class="col-6 offset-3 col-md-4 offset-md-0 d-grid" style="margin-bottom: 15vmin ;">
+                <div class="cont-preview cont-preview-sm cont-preview-md">
+                    <p class="texto-preview">Encuentra las diferencias</p>
+                </div>
             </div>
 
         </div>
@@ -80,7 +149,7 @@
     </div>
     <!--Footer-->
     <div class="container-fluid">
-        <div class="row text-center color-arena footer font-secundario" style="padding-top: 5vmin;">
+        <div class="row text-center color-arena footer font-secundario" style="padding-top: 5vmin;margin-top: 15vh;">
                 
             <!--Logos-->
             <div class="col-2" style="display: grid;">
@@ -106,5 +175,16 @@
             </div>
         </div>
     </div>
+    <script>
+        let clickFeliz = document.getElementById('clickFeliz');
+        function Redireccionar(minijuego)
+        {
+            clickFeliz.play();
+            setTimeout(function()
+            {
+                location.href =minijuego;
+            },650)
+        }
+    </script>
 </body>
 </html>
