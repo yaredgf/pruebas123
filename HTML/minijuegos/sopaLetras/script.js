@@ -12,7 +12,6 @@ function handleMouseUp(){
     if(palabras.length===0){
         alert("ganaste")
     }
-    console.log(palabras)
 }
 function handleLoad(){
     var tabla = document.getElementById("sopaLetras");
@@ -72,12 +71,12 @@ function palabraEncontrada(idLetra){
     const dataArr = new Set(idLetra);
     let result = [...dataArr];
     var palabra = simplifyPalabra()
-    console.log(palabra)
     for(i=0;i<palabras.length;i++)
     {
         if(palabra.toString().trim().toUpperCase()==palabras[i].toString().trim().toUpperCase())
         {
             document.getElementById(palabra.toLowerCase().trim()).style.textDecoration="line-through";
+            document.getElementById(palabra.toLowerCase().trim()).style.color='rgb(33, 105, 147)';
             for(j=0;j<result.length;j++)
             {
                 document.getElementById(result[j]).className="selected"
@@ -92,14 +91,14 @@ function palabraEncontrada(idLetra){
 }
 function hover(id){
     if(mouseState){
-        id.style.backgroundColor="red"
+        id.style.backgroundColor="#837049b9"
         letrasObtenidas+=id.innerText
         ids[ids.length]=id.id
     }
     else{
         var elements = document.getElementsByClassName("tElement")
         for(i=0;i<elements.length;i++){
-            elements[i].style.backgroundColor="white"
+            elements[i].style.backgroundColor="#b7a179"
         }
         while(ids.length){
             ids.pop()
