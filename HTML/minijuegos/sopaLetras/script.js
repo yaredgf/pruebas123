@@ -23,11 +23,9 @@ function handleTouchEnd() {
     }
 }
 function handleLoad(){
-    
     var tabla = document.getElementById("sopaLetras");
     var palabrasRE = document.getElementById("palabrasR");
     var palabrasLE = document.getElementById("palabrasL");
-    
     var innerHTMLL=""
     var innerHTMLRE=""
     var innerHTMLLE=""
@@ -68,7 +66,6 @@ function vaciar(){
     }
     letrasObtenidas = "";
 }
-const voidS=[];
 function simplifyPalabra() 
 {    
     var palabra=""
@@ -115,7 +112,7 @@ function palabraEncontrada(idLetra){
 function hoverTouch(id){
     var x = id.touches[0].pageX
     var y = id.touches[0].pageY
-    var elements = document.getElementsByClassName("tElement")
+    var elements = document.getElementsByTagName("td")
     for(i=0;i<elements.length;i++)
     {
         var boundaries = elements[i].getBoundingClientRect();
