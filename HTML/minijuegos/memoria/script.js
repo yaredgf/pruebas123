@@ -48,8 +48,6 @@ function cardUnflip(){
 
 let modal = document.getElementById('ModalWin');
 
-modal.style.opacity=0;
-modal.style.display="none";
 function Ganar()
 {
     let tiempoFinal="0", minutos="minuto";
