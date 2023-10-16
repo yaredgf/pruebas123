@@ -3,20 +3,31 @@ const palabras = ["Barro","Cardumen","Rana","Cocodrilo","Siseo","Mar","Coral","M
 const palabrasL = ["Murice","Lora","Humedal","Tinte","Boruca","Boca Sierpe","Vasija"];
 const palabrasR = ["Barro","Cardumen","Rana","Cocodrilo","Siseo","Mar","Coral"];
 var mouseState = false;
+var ids=[];
 function handleMouseDown(){
     mouseState=true
 }
 function handleMouseUp(){
     mouseState=false
     palabraEncontrada(ids)
+    vaciar()
+    if(palabras.length===0){
+        alert("ganaste")
+    }
+}
+function handleTouchEnd() {
+    palabraEncontrada(ids)
+    vaciar()
     if(palabras.length===0){
         alert("ganaste")
     }
 }
 function handleLoad(){
+    
     var tabla = document.getElementById("sopaLetras");
     var palabrasRE = document.getElementById("palabrasR");
     var palabrasLE = document.getElementById("palabrasL");
+    
     var innerHTMLL=""
     var innerHTMLRE=""
     var innerHTMLLE=""
@@ -26,11 +37,14 @@ function handleLoad(){
             innerHTMLL+="<tr class='tRow'>"
             for(var j =i;j<i+11;j++)
             {
-                innerHTMLL+="<td class='tElement' id='"+sopa[j]+j+"' onmousemove='hover("+sopa[j]+j+")' >"+sopa[j]+"</td>"
+                innerHTMLL+="<td class='tElement' ontouchmove='hoverTouch(event)' onmousemove='hover(event)' id='"+sopa[j]+j+"'>"+sopa[j]+"</td>"
             }
             innerHTMLL+="</tr>"
         }
     }
+    
+    var cells = document.getElementsByTagName('td');
+    console.log(cells)
     for(var i = 0;i<palabrasL.length;i++)
     {
         innerHTMLLE+="<span id='"+palabrasL[i].toLowerCase().trim().replace(" ", "")+"'>"+palabrasL[i]+"</span>"
@@ -44,7 +58,16 @@ function handleLoad(){
     tabla.innerHTML=innerHTMLL;
 }
 var letrasObtenidas=""
-var ids=[];
+function vaciar(){
+    var elements = document.getElementsByClassName("tElement");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = "#b7a179";
+    }
+    while (ids.length) {
+        ids.pop();
+    }
+    letrasObtenidas = "";
+}
 const voidS=[];
 function simplifyPalabra() 
 {    
@@ -89,20 +112,36 @@ function palabraEncontrada(idLetra){
         }
     }
 }
-function hover(id){
-    if(mouseState){
-        id.style.backgroundColor="#837049b9"
-        letrasObtenidas+=id.innerText
-        ids[ids.length]=id.id
+function hoverTouch(id){
+    var x = id.touches[0].pageX
+    var y = id.touches[0].pageY
+    var elements = document.getElementsByClassName("tElement")
+    for(i=0;i<elements.length;i++)
+    {
+        var boundaries = elements[i].getBoundingClientRect();
+        if(x>boundaries.x&&x<(boundaries.left+boundaries.width)){
+            if(y>boundaries.top&&y<(boundaries.top+boundaries.height))
+            {
+                elements[i].style.backgroundColor = "#837049b9"
+                letrasObtenidas += elements[i].innerHTML;
+                ids[ids.length] = elements[i].id;
+            }
+        }
     }
-    else{
-        var elements = document.getElementsByClassName("tElement")
-        for(i=0;i<elements.length;i++){
-            elements[i].style.backgroundColor="#b7a179"
+}
+function hover(id) {
+    if (mouseState) {
+        id.target.style.backgroundColor = "#837049b9";
+        letrasObtenidas += id.target.innerText;
+        ids[ids.length] = id.target.id;
+    } else {
+        var elements = document.getElementsByClassName("tElement");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = "#b7a179";
         }
-        while(ids.length){
-            ids.pop()
+        while (ids.length) {
+            ids.pop();
         }
-        letrasObtenidas=""
+        letrasObtenidas = "";
     }
 }
