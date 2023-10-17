@@ -6,7 +6,7 @@
     --color-principal : #837049b9;
     --color-secundario : #9254c58d;
     --color-arenaback :#b7a179dc;
-    color: rgb(33, 33, 33);
+    color: rgb(63, 62, 59);
     overflow: hidden;
 }
 #sopaLetras{
@@ -23,7 +23,6 @@
     height: 110vmin;
 }
 .selected{
-    background-color: var(--color-secundario)!important;
     padding: 6px;
     text-align: center;
     border: 0px;
@@ -51,6 +50,7 @@
     margin: 0;
 }
 #palabras{
+    color: azure;
     width: 100%;
     display: flex;
     justify-content: space-between;

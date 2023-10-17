@@ -1,4 +1,4 @@
-const sopa = ["P","J","C","Y","H","D","R","S","R","M","M","C","T","O","B","U","B","B","I","P","Y","A","C","I","C","O","M","J","A","S","B","C","R","V","N","O","C","E","E","R","E","O","A","D","A","T","D","A","D","M","R","O","R","R","W","S","E","R","S","A","U","O","X","U","D","X","I","C","I","I","L","R","G","O","C","U","A","J","O","L","E","S","I","N","L","A","M","C","A","R","O","R","N","C","G","O","Z","E","L","L","A","N","P","M","E","P","R","U","N","N","B","L","N","E","E","E","R","A","N","A","J"]
+const sopa = ["P","J","C","Y","H","D","R","S","R","M","M","C","T","O","B","U","B","B","I","P","Y","A","C","I","C","O","M","J","A","S","B","C","R","V","N","O","C","E","E","R","E","O","A","D","A","T","D","A","D","M","R","O","R","R","W","S","E","R","S","A","U","O","X","U","D","X","I","C","I","I","L","R","G","O","C","U","A","J","O","L","E","S","I","N","L","A","M","C","A","R","O","R","N","C","G","O","Z","E","L","L","A","N","P","M","E","P","R","U","N","N","B","L","N","E","E","H","R","A","N","A","J"]
 const palabras = ["Barro","Cardumen","Rana","Cocodrilo","Siseo","Mar","Coral","Murice","Lora","Humedal","Tinte","Boruca","BocaSierpe","Vasija"];
 const palabrasL = ["Murice","Lora","Humedal","Tinte","Boruca","Boca Sierpe","Vasija"];
 const palabrasR = ["Barro","Cardumen","Rana","Cocodrilo","Siseo","Mar","Coral"];
@@ -7,19 +7,41 @@ var ids=[];
 function handleMouseDown(){
     mouseState=true
 }
+
+let modal = document.getElementById('ModalWin');
+let ganado=false;
+
+function Ganar()
+{
+    ganado=true;
+    let tiempoFinal="0", minutos="minuto";
+    if (Math.floor(tiempo/60)>0)
+    {
+        if (Math.floor(tiempo/60)>1) {minutos= "minutos";}
+        tiempoFinal= (Math.floor(tiempo/60))+" "+minutos+" con "+(tiempo%60)+" segundos";
+    }
+    else
+    {
+        tiempoFinal= (tiempo%60)+" segundos"
+    }
+    document.getElementById('tiempo').innerText= tiempoFinal;
+    modal.style.display="grid";
+    $('#ModalWin').animate({opacity:1},'slow')
+}
+
 function handleMouseUp(){
     mouseState=false
     palabraEncontrada(ids)
     vaciar()
-    if(palabras.length===0){
-        alert("ganaste")
+    if(palabras.length===0&&!ganado){
+        Ganar();
     }
 }
 function handleTouchEnd() {
     palabraEncontrada(ids)
     vaciar()
-    if(palabras.length===0){
-        alert("ganaste")
+    if(palabras.length===0&&!ganado){
+        Ganar();
     }
 }
 function handleLoad(){
@@ -35,7 +57,7 @@ function handleLoad(){
             innerHTMLL+="<tr class='tRow'>"
             for(var j =i;j<i+11;j++)
             {
-                innerHTMLL+="<td class='tElement' ontouchmove='hoverTouch(event)' onmousemove='hover(event)' id='"+sopa[j]+j+"'>"+sopa[j]+"</td>"
+                innerHTMLL+="<td class='tElement' ontouchmove='hoverTouch(event)' onmousemove='hover("+sopa[j]+j+")' id='"+sopa[j]+j+"'>"+sopa[j]+"</td>"
             }
             innerHTMLL+="</tr>"
         }
@@ -91,20 +113,26 @@ function palabraEncontrada(idLetra){
     const dataArr = new Set(idLetra);
     let result = [...dataArr];
     var palabra = simplifyPalabra()
+    console.log(result)
     for(i=0;i<palabras.length;i++)
     {
         if(palabra.toString().trim().toUpperCase()==palabras[i].toString().trim().toUpperCase())
         {
-            document.getElementById(palabra.toLowerCase().trim()).style.textDecoration="line-through";
-            document.getElementById(palabra.toLowerCase().trim()).style.color='rgb(33, 105, 147)';
-            for(j=0;j<result.length;j++)
+            if(result.length==palabras[i].toString().length)
             {
-                document.getElementById(result[j]).className="selected"
-                for (let l = 0; l < palabras.length; l++) {
-                    if (palabras[l].toString().trim().toUpperCase() === palabra.toString().trim().toUpperCase()) {
-                        palabras.splice(l, 1);
+                var color = "hsl("+Math.floor((Math.random()*360))+",100%,60%)"
+                document.getElementById(palabra.toLowerCase().trim()).style.textDecoration="line-through";
+                document.getElementById(palabra.toLowerCase().trim()).style.color=color;
+                for(j=0;j<result.length;j++)
+                {
+                    document.getElementById(result[j]).className="selected"
+                    document.getElementById(result[j]).style.backgroundColor=color
+                    for (let l = 0; l < palabras.length; l++) {
+                        if (palabras[l].toString().trim().toUpperCase() === palabra.toString().trim().toUpperCase()) {
+                            palabras.splice(l, 1);
+                        }
                     }
-                }
+                }   
             }
         }
     }
@@ -119,7 +147,10 @@ function hoverTouch(id){
         if(x>boundaries.x&&x<(boundaries.left+boundaries.width)){
             if(y>boundaries.top&&y<(boundaries.top+boundaries.height))
             {
-                elements[i].style.backgroundColor = "#837049b9"
+                if(elements[i].className!="selected"){
+                    elements[i].style.backgroundColor = "#837049b9"
+                }
+                
                 letrasObtenidas += elements[i].innerHTML;
                 ids[ids.length] = elements[i].id;
             }
@@ -128,9 +159,12 @@ function hoverTouch(id){
 }
 function hover(id) {
     if (mouseState) {
-        id.target.style.backgroundColor = "#837049b9";
-        letrasObtenidas += id.target.innerText;
-        ids[ids.length] = id.target.id;
+        letrasObtenidas+=id.innerText
+        ids[ids.length]=id.id 
+        if(id.className!="selected"){
+            id.style.backgroundColor="#837049b9"
+        }
+    
     } else {
         var elements = document.getElementsByClassName("tElement");
         for (var i = 0; i < elements.length; i++) {
@@ -142,3 +176,5 @@ function hover(id) {
         letrasObtenidas = "";
     }
 }
+let tiempo=0;
+setInterval(function(){tiempo+=1;},1000);
