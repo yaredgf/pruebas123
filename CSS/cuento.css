@@ -1,5 +1,8 @@
 /*------------Cuento------------*/
-
+body{overflow-x: hidden;}
+body::-webkit-scrollbar {width: 1.5vmin;margin-left: -1.5vmin;}
+body::-webkit-scrollbar-track {background: #b1b1b1 !important;}
+body::-webkit-scrollbar-thumb {background: #f0f0f0;border-radius: 2vmin;}
 .fondo-cuento
 {
   background-image: url('../SVG/MarVerde.svg');
@@ -43,10 +46,34 @@
   border: 1px solid #f0f0f0;
 }
 
+/*para sm*/
+@media (max-width:768px)
+{ 
+  .display-img-sm
+  {
+    height: 100% !important;width: auto !important;
+  }
+}
+
+/*para md*/
+@media (min-width:768px)
+{
+  .display-img-md
+  {
+    height: auto;width: 75.555vmin;
+  }
+}
+.cont-img
+{
+  background-color: #F0f0f0;
+  aspect-ratio: 8 / 9;
+
+}
 .imagen-cuento
 {
   background-color: #f0f0f0 !important;
   box-shadow: 0px 0px 20px #1111116b;
+  aspect-ratio: 8 / 9;
 }
 
 
@@ -55,22 +82,12 @@
     height: 5vmin;
     width: auto;
 }
-audio::-webkit-media-controls-panel{background-color: #E9A032;}
-audio::-webkit-media-controls-current-time-display{display: none;}
-
-audio::-webkit-media-controls-time-remaining-display{display: none;}
-
-audio::-webkit-media-controls-timeline
-{
-    width: max-content;
-}
-audio::-webkit-media-controls-toggle-closed-captions-button{display: none;}
 
 
 .audio-container
 {
     width: 90%;
-    height: 5vmin;
+    height: 5vh;
     margin-left: 5%;
     background-color: #E9A032;
     border-radius: 4vmin;

@@ -1,0 +1,143 @@
+body
+    {
+        overflow-x: hidden;
+        background-image: url('../IMG/Recursos/fondoHub.webp');
+        background-position: center;
+        background-size: cover;
+    }
+    /*para sm*/
+    @media (max-width:768px)
+    { 
+        .cont-preview-sm
+        {
+            width: 40vmin;
+            height: 33.33vmin;
+        }
+    }
+
+    /*para md*/
+    @media (min-width:768px)
+    {
+        .cont-preview-md
+        {
+            width: 30vmin;
+            height: 25vmin;
+        }
+    }
+    .cont-preview
+    {
+        z-index: 3;
+        transition: ease-in-out 0.3s;
+        border-radius: 2vmin;
+        align-self: center;
+        justify-self: center;
+        display: grid;
+        position: relative;
+        top: 0%;
+    }
+    .cont-preview:hover{box-shadow: 0px 0px 15px #464646;}
+    .preview-card
+    {
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        background-color: #E9A032;
+        border-radius: 2vmin;
+        outline: solid  1vmin #d4ebeb85;
+        box-shadow: 0px 0px 5px #46464681;
+    }
+    .texto-preview
+    {
+        z-index: 6;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        font-family: Bree Serif;
+        font-size: 4vmin;
+        transition: inherit;
+        position: absolute;
+    }
+    .cartas
+    {
+        z-index: 1 !important;
+        transition: inherit;
+        height: 80%;
+        width: auto;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        font-size: 10vmin;
+    }
+    .cont-preview:hover .carta1
+    {
+        top: -6vmin;
+        left: -2vmin;
+        transform: rotate(-10deg);
+    }
+    .cont-preview:hover .carta2
+    {
+        top: -7.5vmin;
+        left: -6vmin;
+        transform: rotate(-20deg);
+    }
+    .cont-preview:hover .carta3
+    {
+        top: -1vmin;
+        left: 80%;
+        transform: rotate(25deg);
+    }
+    .cont-preview:hover .letra1
+    {
+        top: -5.5vmin;
+        left: -9vmin;
+        transform: rotate(-25deg);
+    }
+    .cont-preview:hover .letra2
+    {
+        top: -15vmin;
+        left: -1vmin;
+        transform: rotate(-10deg);
+    }
+    .cont-preview:hover .letra3
+    {
+        top: -14vmin;
+        left: 46%;
+        transform: rotate(15deg);
+    }
+    .cont-preview:hover .letra4
+    {
+        top: 2vmin;
+        left: 110%;
+        transform: rotate(10deg);
+    }
+    .cont-preview:hover .letra5
+    {
+        top: 20vmin;
+        left: -5vmin;
+        transform: rotate(10deg);
+    }
+    .cont-preview:hover .letra6
+    {
+        top: 20vmin;
+        left: 80%;
+        transform: rotate(-25deg);
+    }
+    .cont-preview:hover .persona1
+    {
+        top: -14vmin;
+        left: 3vmin;
+        transform: rotate(1deg);
+    }
+    .cont-preview:hover .persona2
+    {
+        top: 17vmin;
+        left: 55%;
+        transform: rotate(140deg) !important;
+    }
+    .cont-preview:hover .persona3
+    {
+        top: 10vmin;
+        left: -14vmin;
+        transform: rotate(-25deg);
+    }
+    
