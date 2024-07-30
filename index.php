@@ -1,3 +1,7 @@
+<?php 
+echo "helllo";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
