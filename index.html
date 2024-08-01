@@ -32,11 +32,12 @@
         {
             height: 100vh;
             width: 100vw;
-            background-image: url(Recursos/IMG/fondo.webp);
-            background-size: cover;
-            background-position: 50%;
             position: absolute;
             z-index: -1000;
+
+            background: #5d4157;
+            background: -webkit-linear-gradient(to left, #5d4157, #a8caba); 
+            background: linear-gradient(to left, #5d4157, #a8caba);
             
         }
         .cont
@@ -47,12 +48,28 @@
             backdrop-filter: blur(5.1px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             padding: 1vmin;
+            color: #fafafa90;
+        }
+
+        .letrero
+        {
+            animation-name: letrero;
+            animation-duration: 3.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes letrero 
+        {
+            0%  {left: 0vmin; margin-top: 0vmin;}
+            30% {left: 0vmin; margin-top: -2vmin;}
+            45% {left: 0vmin; margin-top: -2vmin;}
+            75% {left: 0vmin; margin-top: 0vmin;}
         }
     </style>
     <div class="bg">
 
     </div>
-    <div class="cont poppins-light-italic">
+    <div class="cont poppins-light-italic letrero">
         <p>Sitio en construcción</p>
         <h1></h1>
     </div>
