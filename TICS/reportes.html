@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .card{
+            box-shadow: 0px 1px 5px #1d1c2977;
+        }
+    </style>
+    <div>
+        <div class=""></div>
+        <div class="container-fluid" style="overflow: hidden;">
+            <div class="row">
+                <div class="col-2 d-none d-md-block">
+                    <div class="card" style="height: 96vh; margin-top: 2vh;">
+                        
+                    </div>
+                </div>
+                <div class="col py-3" style="height: 100vh; overflow-x: hidden; overflow-y: scroll;">
+                    <div class="contenedor" >
+                        <div class="row">
+                            <div class="col-12 col-md-4 justify-content-center">
+
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2">Requerimientos</h2>
+                                    <canvas id="graficoRequerimientos" class="theheight"></canvas>
+                                </div>
+
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2 ">Tasa de aceptación de Mockups</h2>
+                                    <canvas id="graficoAceptacionMockups" class="theheight"></canvas>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-4 justify-content-center">
+
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2 ">Tareas entregadas a tiempo</h2>
+                                    <canvas id="graficoTareasATiempo" class="theheight"></canvas>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-4 justify-content-center">
+
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2 ">Promedio de Errores por Revisión</h2>
+                                    <canvas id="graficoPromedioErroresRevision" class="theheight"></canvas>
+                                </div>
+
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2">Porcentaje de Errores Resueltos</h2>
+                                    <canvas id="graficoErroresResueltos" class="theheight"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 justify-content-center">
+                                <div class="card text-center p-3 mb-3">
+                                    <h2 class="mt-2 ">Retrabajo por archivos</h2>
+                                    <canvas id="graficoRetrabajo" class="theheight"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        function ToRound(num){return Math.round( num * 10 )/10;}
+
+        //Requerimientos
+        var reqsCumplidos = [15, 0];
+        var reqsNoCumplidos = [2, 0];
+        var reqsNuevos = [0, 3];
+        var reqsRemovidos = [0, 3];
+        new Chart(document.getElementById('graficoRequerimientos'), {
+            type: 'bar',
+            data: 
+            {
+                labels: ['Requerimientos Totales', 'Requerimientos Nuevos'],
+                datasets: 
+                [
+                    {
+                        label: 'Reqs. Cumplidos',
+                        data: reqsCumplidos
+                    },
+                    {
+                        label: 'Reqs. No Cumplidos',
+                        data: reqsNoCumplidos
+                    },
+                    {
+                        label: 'Reqs. Nuevos',
+                        data: reqsNuevos
+                    },
+                    {
+                        label: 'Reqs. Removidos',
+                        data: reqsRemovidos
+                    }
+                ]
+            },
+            options: 
+            {
+                scales: 
+                {
+                    y: 
+                    {
+                        stacked: true
+                    },
+                    x: 
+                    {
+                        stacked: true
+                    }
+                },
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    }
+                }
+            }
+        });
+        
+        
+        //Tareas a tiempo
+        var totalTareasATiempo=35, totalTareasAtrasadas=7;
+        var tareasATiempo = [totalTareasATiempo-totalTareasAtrasadas, totalTareasAtrasadas]; //bien y tardes
+        new Chart(document.getElementById('graficoTareasATiempo'), {
+            type: 'pie',
+            data: 
+            {
+                labels: ['Tareas Cumplidas a tiempo', 'Tareas cumplidas con atraso'],
+                datasets: 
+                [
+                    {
+                        data: tareasATiempo
+                    }
+                ]
+            },
+            options: 
+            {
+                
+                
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    },
+                    tooltip: 
+                    {
+                        callbacks: {
+                            label: (context)=> 
+                            {
+                                return " Tareas"+": "+context.raw+" ("+ToRound(context.raw / totalTareasATiempo *100)+"%)";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+        //retrabajo
+        var trabajo= [0, 3, 6, 14, 15, 3, 7, 7];
+        var retrabajo= [0, 0, 0, 5, 5, 0, 0, 5];
+        trabajo.forEach(num => {trabajo[0]+=num;});
+        retrabajo.forEach(num => {retrabajo[0]+=num;});
+        new Chart(document.getElementById('graficoRetrabajo'), {
+            type: 'bar',
+            data: 
+            {
+                labels: ['Total', 'Core', 'Controlador', 'Entidades', 'EntidadesM', 'CSS', 'JS', 'Vista'],
+                datasets: 
+                [
+                    {
+                        label: 'Archivos',
+                        data: trabajo
+                    },
+                    {
+                        label: 'Archivos retrabajados',
+                        data: retrabajo
+                    }
+                ]
+            },
+            options: 
+            {
+                indexAxis: 'y',
+                scales: 
+                {
+                    y: 
+                    {
+                    },
+                    x: 
+                    {
+                    }
+                },
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    },
+                    tooltip: 
+                    {
+                        callbacks: {
+                            label: (context)=> 
+                            {
+                                return context.dataset.label+": "+context.raw+" ("+ToRound(context.raw / trabajo[0] *100)+"%)";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+        //Promedio Errores por Revision
+        var erroresPorRevision= [10, 50 , 35], promErroresPorRevision=0,labelErroresPorRevision=[];
+        //Label
+        for (var i=0;i<erroresPorRevision.length;i++){labelErroresPorRevision.push(("Revisión "+(i+1)));}
+        labelErroresPorRevision.push("Promedio");
+        //prom
+        erroresPorRevision.forEach(num => {promErroresPorRevision+=num;});
+        promErroresPorRevision= promErroresPorRevision/erroresPorRevision.length;
+
+        erroresPorRevision.push(ToRound(promErroresPorRevision));
+        new Chart(document.getElementById('graficoPromedioErroresRevision'), {
+            type: 'bar',
+            data: 
+            {
+                labels: labelErroresPorRevision,
+                datasets: 
+                [
+                    {
+                        label: 'Errores encontrados',
+                        data: erroresPorRevision
+                    },
+                ]
+            },
+            options: 
+            {
+                scales: 
+                {
+                    y: 
+                    {
+                        stacked: true
+                    },
+                    x: 
+                    {
+                        stacked: true
+                    }
+                },
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    }
+                }
+            }
+        });
+
+
+
+        //Errores encontrados / resueltos
+        var erroresEncontrados=15, erroresResueltos=13;
+        new Chart(document.getElementById('graficoErroresResueltos'), {
+            type: 'bar',
+            data: 
+            {
+                labels: ['Errores Encontrados'],
+                datasets: 
+                [
+                    {
+                        label: 'Errores resueltos',
+                        data: [erroresResueltos]
+                    },
+                    {
+                        label: 'Errores sin resolver',
+                        data: [erroresEncontrados-erroresResueltos]
+                    }
+                ]
+            },
+            options: 
+            {
+                indexAxis: 'y',
+                scales: 
+                {
+                    y: 
+                    {
+                        stacked: true
+                    },
+                    x: 
+                    {
+                        stacked: true
+                    }
+                },
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    },
+                    tooltip: 
+                    {
+                        callbacks: {
+                            label: (context)=> 
+                            {
+                                return context.dataset.label+": "+context.raw+" ("+ToRound(context.raw / erroresEncontrados *100)+"%)";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+    //Mockups aceptados
+    var totalMockups=20, mockupsRechazados=11;
+        var tareasATiempo = [totalMockups-mockupsRechazados, mockupsRechazados]; //bien y tardes
+        new Chart(document.getElementById('graficoAceptacionMockups'), {
+            type: 'pie',
+            data: 
+            {
+                labels: ['Mockups Aceptados', 'Mockups Rechazados'],
+                datasets: 
+                [
+                    {
+                        data: tareasATiempo
+                    }
+                ]
+            },
+            options: 
+            {
+                
+                
+                plugins:
+                {
+                    legend: 
+                    {
+                        display: false
+                    },
+                    tooltip: 
+                    {
+                        callbacks: {
+                            label: (context)=> 
+                            {
+                                return " Tareas"+": "+context.raw+" ("+ToRound(context.raw / totalMockups *100)+"%)";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
